@@ -33,8 +33,14 @@ class ArticlesController < ApplicationController
     end
   end 
   
-  def destroy
-    
+  def delete
+    @article = Article.find(params[:id])
+    if @article.destroy
+      flash.now[:success] = "Article deleted"
+      redirect_to root_path
+    else
+      flash.now[:error] = "Unable to delete"
+    end
   end
 
   def show
