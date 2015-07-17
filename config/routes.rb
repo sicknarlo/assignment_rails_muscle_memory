@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   get '/' => 'articles#index'
 
+  get '/articles/edit/:id' => 'articles#edit' , as: 'edit'
+
   root to: 'articles#index'
 
   
