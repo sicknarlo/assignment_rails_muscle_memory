@@ -8,7 +8,8 @@ Rails.application.routes.draw do
 
   get '/' => 'articles#index'
 
+  get '/articles/edit' => 'articles#edit'
+
   root to: 'articles#index'
 
-  
 end
